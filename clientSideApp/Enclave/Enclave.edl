@@ -1,0 +1,11 @@
+enclave {
+	include "string.h"
+	from "Attestation/isv_enclave.edl" import *;
+    trusted {
+        public sgx_status_t ecall_init_MuJS([in, string] const char * data);
+    };
+    
+    untrusted {
+        void ocall_outputMuJS ([in, string] const char * data);
+    };
+};

@@ -1,0 +1,9 @@
+enclave {
+	include "string.h"
+	include "../App/sample_libcrypto.h"
+    trusted {
+        public sgx_status_t ecall_getPublicKey([in, size=64] uint8_t * encryptedPublicKey, [in, size=16] uint8_t * mac, [in, size=16] uint8_t * secret_key, [out, size=64] sample_ec256_public_t * p_public);
+
+        public sgx_status_t ecall_getKey([in, size=80] uint8_t * encryptedKey, [in, size=16] uint8_t * mac, [in, size=16] uint8_t * secret_key, [out, size=80] uint8_t * p_key);
+    };
+};

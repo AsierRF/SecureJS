@@ -1,0 +1,9 @@
+{
+  "name": "com.asier.securejs",
+  "description": "Native messaging host",
+  "path": "/path/to/client/Side/App",
+  "type": "stdio",
+  "allowed_origins": [
+    "chrome-extension://ojfacojdekjihaibofnnpaahakapnhjp/"
+  ]
+}

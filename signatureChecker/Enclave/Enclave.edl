@@ -1,0 +1,14 @@
+enclave {
+	include "string.h"
+	include "sgx_tcrypto.h"
+    trusted {
+        public sgx_status_t ecall_init_SignatureCheck([in, string] const char * stringValue, [in, size=64] sgx_ec256_public_t * p_public, [in, string] const char * signature);
+
+    };
+    
+    untrusted {
+        void ocall_getUint8_t([in,size=size] uint8_t *pointer, uint32_t size, int order);
+        void ocall_getUint32_t([in,size=32] uint32_t *pointer, uint32_t size, int order);
+        void ocall_signatureCheck([in, string] const char * data);
+    };
+};

@@ -1,0 +1,23 @@
+{
+	"manifest_version": 2,
+	"name": "My first extension",
+	"description": "This extension should be called by the JavaScript and change a number.",
+	"version": "1.0",
+
+  "background": {
+    "scripts":["bg.js"]
+  },
+  "content_scripts": [{
+    "matches": ["http://*/*","https://*/*"],
+    "js": ["popup.js"],
+    "run_at": "document_start"
+  }],
+  "externally_connectable": {
+    "matches": ["http://IP/*", "http://IP/*"]
+  },
+    "browser_action": {
+  },
+  "permissions": [
+    "nativeMessaging"
+  ]
+}
